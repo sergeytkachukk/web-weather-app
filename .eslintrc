@@ -3,6 +3,7 @@
   "rules": {
     "no-unused-vars": "off",
     "unused-imports/no-unused-imports": "error",
+    "no-multi-str": "warn",
     "unused-imports/no-unused-vars": [
       "warn",
       {
@@ -11,6 +12,10 @@
         "args": "after-used",
         "argsIgnorePattern": "^_"
       }
-    ]
+    ],
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2020
+    }
   }
 }

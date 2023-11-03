@@ -1,12 +1,5 @@
+import { alpha, Box, InputBase, styled } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import {
-  alpha,
-  AppBar,
-  Box, InputBase,
-  styled,
-  Toolbar
-} from "@mui/material";
-import "./SearchForm.css";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -53,19 +46,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export const SearchForm = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
-        </Toolbar>
-      </AppBar>
+      <Search>
+        <SearchIconWrapper>
+          <SearchIcon />
+        </SearchIconWrapper>
+
+        <StyledInputBase
+          placeholder="Search…"
+          inputProps={{ "aria-label": "search" }}
+        />
+      </Search>
     </Box>
   );
 };
