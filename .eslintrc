@@ -14,8 +14,9 @@
       }
     ],
     "parserOptions": {
+      "ecmaVersion": 2020,
       "sourceType": "module",
-      "ecmaVersion": 2020
+      "@typescript-eslint/no-empty-interface": 0
     }
   }
 }

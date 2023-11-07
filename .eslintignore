@@ -1,0 +1,3 @@
+**/node_modules/**
+data/countryData/**
+lib/intlPolyfill/templates/*.ts
