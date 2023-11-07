@@ -1,29 +1,24 @@
-import React, { useEffect, useState } from "react";
-
+import { styled } from "@mui/material";
 import "./App.css";
 import Header from "./components/Header/Header";
-import {SearchForm} from "./components/Search/SearchForm";
+import SearchForm from "./components/Search/SearchForm";
+
+const AppWrapper = styled("div")({
+  display: "flex",
+  flexDirection: "column",
+  flex: "1 1 auto",
+  maxWidth: "100%",
+  minHeight: "100vh",
+  backgroundColor: "#4b515d",
+});
 
 const App = () => {
-  const [lat, setLat] = useState([]);
-  const [long, setLong] = useState([]);
-
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition((position: any) => {
-      setLat(position.coords.latitude);
-      setLong(position.coords.longitude);
-    });
-
-    console.log("Latitude is:", lat);
-    console.log("Longitude is:", long);
-  }, [lat, long]);
-
   return (
-    <div className="App">
+    <AppWrapper>
       <Header />
 
       <SearchForm />
-    </div>
+    </AppWrapper>
   );
 };
 
