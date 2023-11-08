@@ -5,7 +5,7 @@ import {
   ThemeProvider,
   Typography,
 } from "@mui/material";
-import sunLogo from "../../assets/clear.png";
+import sunLogo from "../assets/clear.png";
 
 const customHeaderTheme = createTheme({
   palette: {

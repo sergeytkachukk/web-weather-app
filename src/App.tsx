@@ -1,7 +1,6 @@
 import { styled } from "@mui/material";
-import "./App.css";
-import Header from "./components/Header/Header";
-import SearchForm from "./components/Search/SearchForm";
+import Header from "./components/Header";
+import SearchForm from "./components/SearchForm";
 
 const AppWrapper = styled("div")({
   display: "flex",
