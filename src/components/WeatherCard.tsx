@@ -1,24 +1,31 @@
 import { Box, Card, CardContent, styled, Typography } from "@mui/material";
 import React from "react";
+import { WeatherIcon } from "./WeactherIcon";
 
 const WeatherCardWrapper = styled(Card)(({ theme }) => ({
   borderRadius: 15,
-  padding: theme.spacing(3.5),
-  width: 300,
-  height: 350,
-  backgroundColor: "#dae3fd",
+  padding: theme.spacing(2.5),
+  width: 400,
+  height: 600,
+  backgroundColor: "#fff",
+}));
+
+const CityStyling = styled(Typography)(({ theme }) => ({
+  padding: theme.spacing(1),
+  fontSize: theme.spacing(4),
+}));
+
+const MiddlePartStyling = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: theme.spacing(5, 3, 5, 3),
 }));
 
 const BottomData = styled(Typography)(({ theme }) => ({
   color: theme.palette.text.secondary,
   padding: theme.spacing(2, 1, 2, 1),
-}));
-
-const TemperatureStyling = styled(Typography)(({ theme }) => ({
-  display: "flex",
-  justifyContent: "center",
-  padding: theme.spacing(5, 3, 5, 3),
-  fontSize: theme.spacing(6),
 }));
 
 interface IProps {
@@ -29,9 +36,10 @@ interface IProps {
   weatherVisibility: number | undefined;
   windSpeed: number | undefined;
   weatherHumidity: number | undefined;
+  wicon: string;
 }
 
-const WeatherDisplay: React.FC<IProps> = ({
+export const WeatherCard: React.FC<IProps> = ({
   city,
   mainWeatherStatus,
   weatherStatusDescription,
@@ -39,12 +47,13 @@ const WeatherDisplay: React.FC<IProps> = ({
   weatherVisibility,
   windSpeed,
   weatherHumidity,
+  wicon,
 }) => {
   return (
     <WeatherCardWrapper>
       <CardContent>
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <Typography variant="h3">{city}</Typography>
+          <CityStyling>{city}</CityStyling>
 
           <Box>
             <Typography variant="subtitle1" color="text.secondary">
@@ -61,7 +70,11 @@ const WeatherDisplay: React.FC<IProps> = ({
           </Box>
         </Box>
 
-        <TemperatureStyling>{temperature}°C</TemperatureStyling>
+        <MiddlePartStyling>
+          <Typography variant="h2">{temperature}°C</Typography>
+
+          <WeatherIcon mainWeatherStatus={mainWeatherStatus} />
+        </MiddlePartStyling>
 
         <Box display="flex" textAlign="center">
           <BottomData>Visibility {weatherVisibility}km</BottomData>
@@ -74,5 +87,3 @@ const WeatherDisplay: React.FC<IProps> = ({
     </WeatherCardWrapper>
   );
 };
-
-export default WeatherDisplay;
