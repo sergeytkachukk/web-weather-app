@@ -24,7 +24,6 @@ export const MainContent = () => {
     number | undefined
   >();
   const [windSpeed, setWeatherWineSpeed] = useState<number | undefined>();
-  const [wicon, setWicon] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [searchPerformed, setSearchPerformed] = useState(false);
   const [searchError, setSearchError] = useState<string | null>(null);
@@ -48,7 +47,6 @@ export const MainContent = () => {
       setWeatherHumidity(weatherData.main.humidity);
       setWeatherVisibility(convertVisibility(weatherData.visibility));
       setWeatherWineSpeed(weatherData.wind.speed);
-      setWicon(weatherData.weather[0].icon);
       setSearchPerformed(true);
     } catch (error) {
       setSearchError("Please type a correct city");
@@ -95,7 +93,6 @@ export const MainContent = () => {
             weatherVisibility={weatherVisibility}
             windSpeed={windSpeed}
             weatherHumidity={weatherHumidity}
-            wicon={wicon}
           />
         )
       )}
