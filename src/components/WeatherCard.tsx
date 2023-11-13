@@ -1,12 +1,12 @@
 import { Box, Card, CardContent, styled, Typography } from "@mui/material";
 import React from "react";
-import { WeatherIcon } from "./WeactherIcon";
+import { WeatherIcon } from "./WeatherIcon";
 
 const WeatherCardWrapper = styled(Card)(({ theme }) => ({
   borderRadius: 15,
   padding: theme.spacing(2.5),
-  width: 400,
-  height: 600,
+  width: "auto",
+  height: "auto",
   backgroundColor: "#fff",
 }));
 
@@ -36,7 +36,6 @@ interface IProps {
   weatherVisibility: number | undefined;
   windSpeed: number | undefined;
   weatherHumidity: number | undefined;
-  wicon: string;
 }
 
 export const WeatherCard: React.FC<IProps> = ({
@@ -47,7 +46,6 @@ export const WeatherCard: React.FC<IProps> = ({
   weatherVisibility,
   windSpeed,
   weatherHumidity,
-  wicon,
 }) => {
   return (
     <WeatherCardWrapper>
@@ -74,6 +72,12 @@ export const WeatherCard: React.FC<IProps> = ({
           <Typography variant="h2">{temperature}°C</Typography>
 
           <WeatherIcon mainWeatherStatus={mainWeatherStatus} />
+          {/* <WeatherIcon mainWeatherStatus="clouds" />
+          <WeatherIcon mainWeatherStatus="rain" />
+          <WeatherIcon mainWeatherStatus="fog" />
+          <WeatherIcon mainWeatherStatus="mist" />
+          <WeatherIcon mainWeatherStatus="snow" />
+          <WeatherIcon mainWeatherStatus="drizzle" /> */}
         </MiddlePartStyling>
 
         <Box display="flex" textAlign="center">
