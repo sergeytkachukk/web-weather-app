@@ -2,7 +2,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { IconButton, InputBase, styled } from "@mui/material";
 import React from "react";
 
-const Search = styled("div")(({ theme }) => ({
+const SearchWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   backgroundColor: "#fff",
   borderRadius: 15,
@@ -32,7 +32,7 @@ interface IProps {
   onPressEnter: () => void;
 }
 
-const Input: React.FC<IProps> = ({
+export const SearchInput: React.FC<IProps> = ({
   value,
   onChange,
   onClick,
@@ -45,7 +45,7 @@ const Input: React.FC<IProps> = ({
     }
   };
   return (
-    <Search>
+    <SearchWrapper>
       <StyledInputBase
         placeholder="Search…"
         inputProps={{ "aria-label": "search" }}
@@ -56,8 +56,6 @@ const Input: React.FC<IProps> = ({
       <IconButton onClick={onClick}>
         <SearchIcon />
       </IconButton>
-    </Search>
+    </SearchWrapper>
   );
 };
-
-export default Input;

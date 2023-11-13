@@ -5,7 +5,7 @@ import {
   ThemeProvider,
   Typography,
 } from "@mui/material";
-import sunLogo from "../assets/clear.png";
+import { ReactComponent as clearDay } from "../assets/clear-day.svg";
 
 const customHeaderTheme = createTheme({
   palette: {
@@ -21,13 +21,13 @@ const HeaderWrapper = styled("div")(({ theme }) => ({
   boxShadow: theme.shadows[5],
 }));
 
-const StyledImage = styled("img")({
+const IconStyling = styled(clearDay)({
   width: 100,
   height: 100,
   marginLeft: 20,
 });
 
-const Header = () => {
+export const Header = () => {
   return (
     <ThemeProvider theme={customHeaderTheme}>
       <HeaderWrapper className="pageHeader">
@@ -41,11 +41,9 @@ const Header = () => {
             Weather App
           </Typography>
 
-          <StyledImage src={sunLogo} alt="sunLogo" />
+          <IconStyling />
         </Box>
       </HeaderWrapper>
     </ThemeProvider>
   );
 };
-
-export default Header;
