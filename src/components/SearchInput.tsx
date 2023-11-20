@@ -40,7 +40,6 @@ export const SearchInput: FC<IProps> = ({
 }) => {
   const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
-      // Call the onEnter function when Enter key is pressed
       onPressEnter();
     }
   };
