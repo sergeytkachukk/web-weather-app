@@ -10,6 +10,7 @@ interface IProps {
 export const WeatherBottomInfo: FC<IProps> = ({ title, value }) => (
   <Box>
     <WhiteTypography>{title}</WhiteTypography>
+
     <WhiteTypography>{value}</WhiteTypography>
   </Box>
 );
