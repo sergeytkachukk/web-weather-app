@@ -14,10 +14,10 @@
         "argsIgnorePattern": "^_"
       }
     ],
-    "parserOptions": {
-      "ecmaVersion": 2021,
-      "sourceType": "module"
-    },
     "@typescript-eslint/no-empty-interface": 0
+  },
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
   }
 }
