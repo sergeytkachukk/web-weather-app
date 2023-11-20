@@ -1,35 +1,32 @@
-# Getting Started with Create React App
+## Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Simple Weather App provides users with real-time weather information, allowing them to stay updated on current weather conditions. The application is developed using modern web technologies, making it responsive and user-friendly.
 
-## Available Scripts
+## Build with:
 
-In the project directory, you can run:
+- **TypeScript**: A superset of JavaScript that adds static typing to the language.
+- **Material-UI (MUI)**: A popular React UI framework for building responsive and attractive user interfaces.
+- **styled-components**: A CSS-in-JS library for styling React components.
+- **React Hooks**: Leveraging the power of functional components and hooks for state management and side effects.
+- **eslint**: A pluggable and configurable linter tool for identifying and fixing problems in JavaScript code.
+- API: https://openweathermap.org
+- **axios**: A promise-based HTTP client for making requests to external APIs.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To get started with the Weather App locally, follow these steps:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/sergeytkachukk/web-weather-app.git
+   cd weather-app
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+2. Install dependencies:
+   ```bash
+   yarn
+   
+3. Run the application:
+   ```bash
+   yarn start
+   
+  The app should now be accessible at http://localhost:3000
