@@ -1,16 +1,18 @@
-import { Box, Card, CardContent, styled, Typography } from "@mui/material";
-import React from "react";
+import { Box, Card, CardContent, styled } from "@mui/material";
+import React, { FC } from "react";
+import { WeatherBottomInfo } from "./WeatherBottomInfo";
 import { WeatherIcon } from "./WeatherIcon";
+import { WhiteTypography } from "./WhiteTypography";
 
 const WeatherCardWrapper = styled(Card)(({ theme }) => ({
   borderRadius: 15,
   padding: theme.spacing(2.5),
   width: "auto",
   height: "auto",
-  backgroundColor: "#fff",
+  backgroundColor: "#4682b4",
 }));
 
-const CityStyling = styled(Typography)(({ theme }) => ({
+const CityStyling = styled(WhiteTypography)(({ theme }) => ({
   padding: theme.spacing(1),
   fontSize: theme.spacing(4),
 }));
@@ -23,9 +25,12 @@ const MiddlePartStyling = styled(Box)(({ theme }) => ({
   padding: theme.spacing(5, 3, 5, 3),
 }));
 
-const BottomData = styled(Typography)(({ theme }) => ({
-  color: theme.palette.text.secondary,
-  padding: theme.spacing(2, 1, 2, 1),
+const StyledBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  textAlign: "center",
+  padding: theme.spacing(1),
 }));
 
 interface IProps {
@@ -38,7 +43,7 @@ interface IProps {
   weatherHumidity: number | undefined;
 }
 
-export const WeatherCard: React.FC<IProps> = ({
+export const WeatherCard: FC<IProps> = ({
   city,
   mainWeatherStatus,
   weatherStatusDescription,
@@ -50,43 +55,36 @@ export const WeatherCard: React.FC<IProps> = ({
   return (
     <WeatherCardWrapper>
       <CardContent>
-        <Box display="flex" justifyContent="space-between" alignItems="center">
+        <StyledBox>
           <CityStyling>{city}</CityStyling>
 
           <Box>
-            <Typography variant="subtitle1" color="text.secondary">
+            <WhiteTypography variant="subtitle1">
               {mainWeatherStatus}
-            </Typography>
+            </WhiteTypography>
 
-            <Typography
-              variant="subtitle1"
-              color="text.secondary"
-              textTransform="capitalize"
-            >
+            <WhiteTypography variant="subtitle1" textTransform="capitalize">
               {weatherStatusDescription}
-            </Typography>
+            </WhiteTypography>
           </Box>
-        </Box>
+        </StyledBox>
 
         <MiddlePartStyling>
-          <Typography variant="h2">{temperature}°C</Typography>
+          <WhiteTypography variant="h2">{temperature}°C</WhiteTypography>
 
           <WeatherIcon mainWeatherStatus={mainWeatherStatus} />
-          {/* <WeatherIcon mainWeatherStatus="clouds" />
-          <WeatherIcon mainWeatherStatus="rain" />
-          <WeatherIcon mainWeatherStatus="fog" />
-          <WeatherIcon mainWeatherStatus="mist" />
-          <WeatherIcon mainWeatherStatus="snow" />
-          <WeatherIcon mainWeatherStatus="drizzle" /> */}
         </MiddlePartStyling>
 
-        <Box display="flex" textAlign="center">
-          <BottomData>Visibility {weatherVisibility}km</BottomData>
+        <StyledBox>
+          <WeatherBottomInfo
+            title="Visibility"
+            value={`${weatherVisibility}km`}
+          />
 
-          <BottomData>Windspeed {windSpeed}m/s</BottomData>
+          <WeatherBottomInfo title="Windspeed" value={`${windSpeed}m/s`} />
 
-          <BottomData>Humidity {weatherHumidity}%</BottomData>
-        </Box>
+          <WeatherBottomInfo title="Humidity" value={`${weatherHumidity}%`} />
+        </StyledBox>
       </CardContent>
     </WeatherCardWrapper>
   );

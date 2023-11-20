@@ -1,6 +1,6 @@
 import SearchIcon from "@mui/icons-material/Search";
 import { IconButton, InputBase, styled } from "@mui/material";
-import React from "react";
+import React, { FC } from "react";
 
 const SearchWrapper = styled("div")(({ theme }) => ({
   display: "flex",
@@ -32,7 +32,7 @@ interface IProps {
   onPressEnter: () => void;
 }
 
-export const SearchInput: React.FC<IProps> = ({
+export const SearchInput: FC<IProps> = ({
   value,
   onChange,
   onClick,

@@ -1,14 +1,15 @@
-import React from "react";
+import React, { FC } from "react";
 import { WeatherIconList } from "./WeatherIconsList";
 
 interface IProps {
   mainWeatherStatus: string;
+  sunriseTimestamp?: number;
+  sunsetTimestamp?: number;
 }
 
-export const WeatherIcon: React.FC<IProps> = ({ mainWeatherStatus }) => {
+export const WeatherIcon: FC<IProps> = ({ mainWeatherStatus }) => {
   const status = mainWeatherStatus.toLowerCase();
   const SelectedIcon = WeatherIconList[status];
-  console.log(status, "status", SelectedIcon);
 
   return (
     <div key={status}>

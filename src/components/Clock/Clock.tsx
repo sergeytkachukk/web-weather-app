@@ -1,12 +1,12 @@
 import { Typography } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, FC } from "react";
 import { DateTime } from "luxon";
 
 interface ClockProps {
   autoDetectTimeZone?: boolean; // Add a prop to enable auto-detecting the time zone
 }
 
-export const Clock: React.FC<ClockProps> = ({ autoDetectTimeZone }) => {
+export const Clock: FC<ClockProps> = ({ autoDetectTimeZone }) => {
   const [dateTime, setDateTime] = useState<DateTime | null>(null);
 
   useEffect(() => {
