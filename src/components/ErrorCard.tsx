@@ -1,12 +1,13 @@
-import { Box, styled, Typography } from "@mui/material";
 import React, { FC } from "react";
+import { Box, styled } from "@mui/material";
+import { WhiteTypography } from "./WhiteTypography";
 
 const ErrorWrapper = styled(Box)(({ theme }) => ({
   borderRadius: 15,
   padding: theme.spacing(2.5),
   width: 400,
   height: 100,
-  backgroundColor: "#6495ed",
+  backgroundColor: "#4682b4",
 }));
 
 interface IProps {
@@ -16,9 +17,9 @@ interface IProps {
 export const ErrorCard: FC<IProps> = ({ message }) => {
   return (
     <ErrorWrapper>
-      <Typography variant="h5">Oops! Something went wrong</Typography>
+      <WhiteTypography variant="h5">Oops! Something went wrong</WhiteTypography>
 
-      <Typography>{message}</Typography>
+      <WhiteTypography>{message}</WhiteTypography>
     </ErrorWrapper>
   );
 };
