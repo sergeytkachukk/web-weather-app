@@ -7,7 +7,7 @@ const ErrorWrapper = styled(Box)(({ theme }) => ({
   padding: theme.spacing(2.5),
   width: 400,
   height: 100,
-  backgroundColor: "#4682b4",
+  backgroundColor: theme.palette.primary.dark,
 }));
 
 interface IProps {

@@ -9,7 +9,7 @@ const WeatherCardWrapper = styled(Card)(({ theme }) => ({
   padding: theme.spacing(2.5),
   width: "auto",
   height: "auto",
-  backgroundColor: "#4682b4",
+  backgroundColor: theme.palette.primary.dark,
 }));
 
 const CityStyling = styled(WhiteTypography)(({ theme }) => ({
