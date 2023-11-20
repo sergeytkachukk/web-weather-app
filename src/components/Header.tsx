@@ -1,24 +1,14 @@
-import {
-  Box,
-  createTheme,
-  styled,
-  ThemeProvider,
-  Typography,
-} from "@mui/material";
+import { Box, styled, Typography } from "@mui/material";
 import { ReactComponent as clearDay } from "../assets/clear-day.svg";
 
-const customHeaderTheme = createTheme({
-  palette: {
-    primary: {
-      main: "#778899",
-    },
-  },
-});
-
-const HeaderWrapper = styled("div")(({ theme }) => ({
+const HeaderWrapper = styled(Box)(({ theme }) => ({
   marginTop: 0,
-  backgroundColor: theme.palette.primary.main,
+  backgroundColor: theme.palette.primary.light,
   boxShadow: theme.shadows[5],
+  display: "flex",
+  justifyContent: "flex-start",
+  alignItems: "center",
+  padding: theme.spacing(1, 0, 1, 5),
 }));
 
 const IconStyling = styled(clearDay)({
@@ -29,21 +19,12 @@ const IconStyling = styled(clearDay)({
 
 export const Header = () => {
   return (
-    <ThemeProvider theme={customHeaderTheme}>
-      <HeaderWrapper className="pageHeader">
-        <Box
-          display="flex"
-          justifyContent="flex-start"
-          alignItems="center"
-          sx={{ paddingLeft: 5, paddingTop: 1, paddingBottom: 1 }}
-        >
-          <Typography variant="h4" mr={2} color="white">
-            Weather App
-          </Typography>
+    <HeaderWrapper className="pageHeader">
+      <Typography variant="h4" mr={2} color="white">
+        Weather App
+      </Typography>
 
-          <IconStyling />
-        </Box>
-      </HeaderWrapper>
-    </ThemeProvider>
+      <IconStyling />
+    </HeaderWrapper>
   );
 };
