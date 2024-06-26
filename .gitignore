@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 .env
+# Firebase configuration
+components/firebase/firebase.ts
 
 # testing
 /coverage

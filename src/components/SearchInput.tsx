@@ -5,15 +5,15 @@ import React, { FC } from "react";
 const SearchWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   backgroundColor: "#fff",
-  borderRadius: 15,
-  padding: theme.spacing(1, 5, 1, 5),
+  borderRadius: theme.spacing(2),
+  border: "1px solid grey",
+  padding: theme.spacing(1, 5),
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("sm")]: {
@@ -25,14 +25,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-interface IProps {
+interface SearchInputProps {
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onClick: () => void;
   onPressEnter: () => void;
 }
 
-export const SearchInput: FC<IProps> = ({
+export const SearchInput: FC<SearchInputProps> = ({
   value,
   onChange,
   onClick,
@@ -43,6 +43,7 @@ export const SearchInput: FC<IProps> = ({
       onPressEnter();
     }
   };
+
   return (
     <SearchWrapper>
       <StyledInputBase
@@ -50,7 +51,7 @@ export const SearchInput: FC<IProps> = ({
         inputProps={{ "aria-label": "search" }}
         value={value}
         onChange={onChange}
-        onKeyUpCapture={handleKeyPress}
+        onKeyPress={handleKeyPress}
       />
       <IconButton onClick={onClick}>
         <SearchIcon />
