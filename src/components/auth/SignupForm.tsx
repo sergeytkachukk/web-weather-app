@@ -13,7 +13,7 @@ const FormContainer = styled(Container)(({ theme }) => ({
   marginTop: theme.spacing(8),
 }));
 
-const StyledTextField = styled(TextField)(({ theme }) => ({
+const StyledTextField = styled(TextField)(() => ({
   "& fieldset": {
     borderRadius: 10,
   },
